@@ -19,15 +19,17 @@ cpu (Interp cm dm stck)
         READ_VAR s -> cpu (Interp (tail cm) dm (lookup s dm:stck))
         ADD -> cpu (Interp (tail cm) dm (compute (+) stck))
         MULTIPLY -> cpu (Interp (tail cm) dm (compute (*) stck))
+        SUB -> cpu (Interp (tail cm) dm (compute (-) stck))
+        DIV -> cpu (Interp (tail cm) dm (compute div stck))
         RETURN_VALUE -> head stck
 
 lookup :: String -> [(String, Int)] -> Int
 lookup _ [] = -1
-lookup id ((s, v):xs) = 
-    if id == s 
-       then v 
+lookup id ((s, v):xs) =
+    if id == s
+       then v
        else lookup id xs
 
 compute :: (Int -> Int -> Int) -> [Int] -> [Int]
-compute op lst = [result] where 
+compute op lst = [result] where
     result = op (head lst) (last lst)

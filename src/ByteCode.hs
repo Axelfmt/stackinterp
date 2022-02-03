@@ -6,5 +6,7 @@ data ByteCode =
     READ_VAR String |
     ADD |
     MULTIPLY |
+    SUB |
+    DIV |
     RETURN_VALUE
     deriving (Eq, Show)
