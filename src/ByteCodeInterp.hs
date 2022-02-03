@@ -1,6 +1,6 @@
 module ByteCodeInterp where
 
-import ByteCode
+import ByteCode ( ByteCode(..) )
 import Prelude hiding (lookup)
 import System.Mem (performGC)
 
