@@ -29,6 +29,5 @@ lookup id ((s, v):xs) =
        else lookup id xs
 
 compute :: (Int -> Int -> Int) -> [Int] -> [Int]
-compute _ [] = []
 compute op lst = [result] where 
     result = op (head lst) (last lst)
