@@ -8,5 +8,7 @@ data ByteCode =
     MULTIPLY |
     SUB |
     DIV |
+    LESS_THAN |
+    BRANCH Int |
     RETURN_VALUE
     deriving (Eq, Show)
