@@ -11,4 +11,4 @@ data ByteCode =
     LESS_THAN |
     BRANCH Int |
     RETURN_VALUE
-    deriving (Eq, Show)
+    deriving (Eq, Show, Read)
